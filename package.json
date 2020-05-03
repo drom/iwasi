@@ -1,0 +1,38 @@
+{
+  "name": "iwasi",
+  "version": "0.1.0",
+  "description": "🐟 Imports for WebAssembly Interface",
+  "main": "lib",
+  "scripts": {
+    "test": "eslint lib/*.js",
+    "unpkg": "browserify --standalone iwasi lib/index.js > iwasi.unpkg.js",
+    "unpkg.min": "terser --compress --mengle -- iwasi.unpkg.js > iwasi.unpkg.min.js",
+    "prepublish": "npm run test && npm run unpkg && npm run unpkg.min"
+  },
+  "files": [
+    "iwasi.unpkg.min.js",
+    "lib/*"
+  ],
+  "unpkg": "iwasi.unpkg.min.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drom/iwasi.git"
+  },
+  "author": "Aliaksei Chapyzhenka",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/drom/iwasi/issues"
+  },
+  "homepage": "https://github.com/drom/iwasi#readme",
+  "devDependencies": {
+    "@wasmer/wasi": "^0.10.2",
+    "@wasmer/wasmfs": "^0.10.2",
+    "@drom/eslint-config": "^0.10.0",
+    "browserify": "^16.2.2",
+    "eslint": "^6.8.0",
+    "terser": "^4.6.11"
+  },
+  "eslintConfig": {
+    "extends": "@drom/eslint-config/eslint4/node8"
+  }
+}

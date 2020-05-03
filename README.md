@@ -1,2 +1,2 @@
 # iwasi
-🐟 imports for WebAssembly interface
+🐟 Imports for WebAssembly Interface
